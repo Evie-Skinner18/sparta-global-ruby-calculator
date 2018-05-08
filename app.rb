@@ -56,10 +56,22 @@ begin # do while loop
   if imperial == true
     puts "Enter your weight in stone and pounds"
     imperial_weight = gets.chomp
+    kg_weight = imperial_weight.to_f * 6.35
+    puts kg_weight
+    puts "Enter your height in inches"
+    imperial_height = gets.chomp
+    m_height = imperial_height.to_f * 0.304
+    puts m_height
+    bmi = kg_weight / m_height / m_height
+    puts "Your BMI is #{bmi}"
   end
   if imperial == false
     puts "Enter your weight in kilos"
-    metric_weight = gets.chomp
+    metric_weight = gets.chomp.to_f
+    puts "Enter your height in metres"
+    metric_height = gets.chomp.to_f
+    bmi = metric_weight/ metric_height /metric_height
+    puts "Your BMI is #{bmi}"
   end
 
 
